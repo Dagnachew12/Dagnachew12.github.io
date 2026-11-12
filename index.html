@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" style="--ac: #498adf;"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Your Name — Medical Imaging &amp; Neurodegenerative Disease Research</title>
+<style>
+:root{--bg:#f7f9fc;--surf:#fff;--tx:#0f172a;--mut:#5b6678;--ac:#4f46e5;--ac2:#06b6d4;--bd:#e2e8f0;--sh:0 10px 30px rgba(15,23,42,.08);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070b16;--surf:#0f1629;--tx:#e8edf7;--mut:#96a3ba;--ac:#818cf8;--ac2:#22d3ee;--bd:#1e2942;--sh:0 10px 30px rgba(0,0,0,.4);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#070b16;--surf:#0f1629;--tx:#e8edf7;--mut:#96a3ba;--ac:#818cf8;--ac2:#22d3ee;--bd:#1e2942;--sh:0 10px 30px rgba(0,0,0,.4);color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--tx);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--ac);text-decoration:none}
+.wrap{max-width:1080px;margin:auto;padding:0 22px}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-weight:800;letter-spacing:-.5px}
+.logo b{background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.links a{color:var(--mut);padding:6px 11px;border-radius:99px;font-size:14px;white-space:nowrap;transition:.2s}
+.links a:hover,.links a.on{color:var(--tx);background:var(--surf);box-shadow:inset 0 0 0 1px var(--bd)}
+#th{border:1px solid var(--bd);background:var(--surf);color:var(--tx);border-radius:50%;width:36px;height:36px;cursor:pointer;flex:none}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--ac),var(--ac2));z-index:30}
+header.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden}
+#cv{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;padding-top:90px;padding-bottom:50px}
+.tag{display:inline-block;padding:5px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--surf);font-size:13px;color:var(--mut)}
+h1{font-size:clamp(2.3rem,6vw,4rem);line-height:1.08;letter-spacing:-1.5px;margin:16px 0 10px}
+h1 span,.grad{background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:1.2rem;color:var(--mut);min-height:1.9em}
+.cur{border-right:2px solid var(--ac);animation:bl 1s steps(1) infinite;margin-left:2px}
+@keyframes bl{50%{border-color:transparent}}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{padding:11px 20px;border-radius:12px;font-weight:600;border:1px solid var(--bd);background:var(--surf);color:var(--tx);transition:.25s;cursor:pointer;font-size:15px}
+.btn:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.btn.p{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;border:0}
+.avatar{aspect-ratio:1;max-width:320px;justify-self:center;width:100%;border-radius:32% 68% 55% 45%/45% 40% 60% 55%;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;font-size:5rem;font-weight:800;color:#fff;animation:morph 9s ease-in-out infinite;box-shadow:0 20px 60px color-mix(in srgb,var(--ac) 45%,transparent)}
+@keyframes morph{50%{border-radius:60% 40% 35% 65%/60% 55% 45% 40%;transform:rotate(4deg)}}
+section{padding:90px 0}
+.sh{font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:-1px;margin-bottom:6px}
+.sub{color:var(--mut);margin-bottom:36px}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+.card{background:var(--surf);border:1px solid var(--bd);border-radius:18px;padding:24px;box-shadow:var(--sh);transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:var(--ac)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-top:28px}
+.stat{text-align:center}.stat b{display:block;font-size:2.2rem}.stat span{color:var(--mut);font-size:14px}
+.tl{position:relative;padding-left:28px;border-left:2px solid var(--bd)}
+.tl .it{position:relative;margin-bottom:26px}
+.tl .it::before{content:"";position:absolute;left:-36px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 5px color-mix(in srgb,var(--ac) 20%,transparent)}
+.yr{font-size:13px;color:var(--ac);font-weight:700}
+.ico{font-size:1.8rem;margin-bottom:8px}
+h3{font-size:1.1rem;margin-bottom:6px}p.m,.m{color:var(--mut);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{font-size:12px;padding:3px 10px;border-radius:99px;background:color-mix(in srgb,var(--ac) 12%,transparent);color:var(--ac)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;align-items:center}
+.f{border:1px solid var(--bd);background:var(--surf);color:var(--mut);padding:7px 16px;border-radius:99px;cursor:pointer;font-size:14px}
+.f.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+#q{flex:1;min-width:180px;padding:9px 14px;border-radius:12px;border:1px solid var(--bd);background:var(--surf);color:var(--tx);font:inherit}
+.pub{display:grid;grid-template-columns:auto 1fr;gap:16px;margin-bottom:14px}
+.pub .y{font-weight:800;color:var(--ac);font-size:1.1rem}
+.bar{height:8px;border-radius:9px;background:var(--bd);overflow:hidden;margin:6px 0 16px}
+.bar i{display:block;height:100%;width:0;border-radius:9px;background:linear-gradient(90deg,var(--ac),var(--ac2));transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.sk{display:flex;justify-content:space-between;font-size:14px;font-weight:600}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+input,textarea{width:100%;padding:12px 14px;margin-bottom:12px;border-radius:12px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit}
+.soc{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+footer{padding:30px 0;text-align:center;color:var(--mut);font-size:14px;border-top:1px solid var(--bd)}
+@media(max-width:800px){.hero .wrap,.contact{grid-template-columns:1fr}.avatar{max-width:200px;order:-1}.links{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+section,.card,.sk{position:relative}
+#ebar{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:40;display:flex;gap:8px;align-items:center;padding:8px;border-radius:16px;background:var(--surf);border:1px solid var(--bd);box-shadow:var(--sh);max-width:96vw;overflow-x:auto}
+#etools{display:none;gap:8px;align-items:center}.editing #etools{display:flex}
+#ebar .btn{padding:7px 12px;font-size:13px;white-space:nowrap}#ebar input[type=color]{width:30px;height:30px;padding:0;border:0;margin:0;background:none;cursor:pointer}
+.ctl{border:1px solid var(--bd);background:var(--surf);color:var(--tx);border-radius:8px;padding:2px 8px;cursor:pointer;font:inherit;font-size:12px;z-index:5}
+.ctl.x{position:absolute;top:8px;right:8px;color:#e11d48}.ctl.sec{position:absolute;top:14px;right:14px}
+.sk .ctl.x{right:auto;left:-26px;top:0}
+.ctl.add{border-style:dashed;color:var(--ac);font-size:14px;padding:14px;min-height:50px;grid-column:1/-1;display:block;width:100%}
+.editing [contenteditable]{outline:1px dashed transparent;border-radius:4px;cursor:text}.editing [contenteditable]:hover{outline-color:var(--ac)}.editing [contenteditable]:focus{outline:2px solid var(--ac);background:color-mix(in srgb,var(--ac) 8%,transparent)}
+.editing .avatar{cursor:pointer;outline:2px dashed var(--ac);outline-offset:6px}
+#toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:8px 16px;border-radius:99px;font-size:14px;opacity:0;pointer-events:none;transition:.3s;z-index:50}#toast.on{opacity:1}
+</style>
+</head>
+<body class="">
+<div id="prog" style="width: 0px;"></div>
+<div id="site">
+<nav><div class="wrap"><a class="logo" href="#home">Dagnachew Tessema Ambaye</a>
+<div class="links"><a href="#about" class="">About</a><a href="#education" class="on">Education</a><a href="#research" class="">Research</a><a href="#publications" class="">Publications</a><a href="#projects" class="">Projects</a><a href="#awards" class="">Awards</a><a href="#skills" class="">Skills</a><a href="#teaching" class="">Teaching</a><a href="#contact">Contact</a></div>
+<button id="th" aria-label="Toggle theme">◐</button></div></nav>
+
+<header class="hero" id="home"><canvas id="cv" width="1905" height="911"></canvas>
+<div class="wrap"><div>
+<span class="tag">● Open to collaborations &amp; grants</span>
+<h1>Hi, I’m <span>Dagnachew Tessema Ambaye</span></h1>
+<div class="role" data-roles="Medical Imaging Researcher|Movement Diagnostics|Deep Learning for Healthcare|Educator &amp; Mentor"><span id="ty">Movement </span><span class="cur"></span></div>
+<p class="m" style="margin-top:14px;max-width:520px">I build imaging and sensor-based AI that detects neurodegenerative disease earlier — turning signals and scans into clinical insight.</p>
+<div class="btns"><a class="btn p" href="#research">Explore my research</a><a class="btn" href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;hl=en&amp;user=W6l3P0cAAAAJ" target="_blank" rel="noopener" data-lk="scholar.google">🎓 Google Scholar</a><a class="btn" href="https://www.linkedin.com/in/dagnachew-tessema-88459419a" target="_blank" rel="noopener" data-lk="linkedin.com">in LinkedIn</a></div>
+</div><div class="avatar" role="img" aria-label="Profile placeholder">DT</div></div></header>
+
+<section id="about"><div class="wrap rv in"><h2 class="sh">About <span class="grad">me</span></h2><p class="sub">Researcher · Educator · Collaborator</p>
+<div class="card"><p>I am an Assistant Researcher at Ulsan National Institute of Science and Technology, working at the intersection of <b>MRI analysis</b> and <b>sensor-based diagnosis of Movement Disorders</b>. I develops deep learning methods — from CNN-based segmentation to image synthesis and wearable-signal modelling — to support early, objective and accessible diagnosis.</p></div>
+<div class="stats"><div class="card stat"><b data-n="3">3</b><span>Publications</span></div><div class="card stat"><b data-n="3">3+</b><span>Citations</span></div><div class="card stat"><b data-n="1">1</b><span>h-index</span></div><div class="card stat"><b data-n="1">1</b><span>Funded projects</span></div></div></div></section>
+
+<section id="education" style="background:var(--surf)"><div class="wrap rv in"><h2 class="sh">Education &amp; <span class="grad">Experience</span></h2><p class="sub">Academic path</p>
+<div class="tl"><div class="it"><span class="yr">2024 – Present</span><h3>Ph.D, Department of Biomedical Engineering</h3><p class="m">Ulsan National Institute of Science and Tehnology — Multimodal Movement Disorder Diagnosis.</p></div>
+<div class="it"><span class="yr">2022 – 2024</span><h3>M.Sc, Graduate School of Artificial Intelligence</h3><p class="m">Ulsan National Institute of Science and Tehnology — Deep Learning Based Resolution Dependent Paired MRI-to-CT Conversion for Orthotopic Breast Cancer Model.</p></div>
+<div class="it"><span class="yr">2018 – 2020</span><h3>Assistant Lecturer, School of Electrical &amp; Computer Engineering</h3><p class="m">Hawassa University — Delivered lectures Introduction to Control System, Industrial Process Control, Electronic Measurement &amp; Instrumentation, Basic Electronics.</p></div>
+<div class="it"><span class="yr">2013 – 2018</span><h3>B.Sc., Electrical &amp; Computer Engineering</h3><p class="m">Addis Ababa University — First Class Honours (Very Great Distiniction).</p></div></div></div></section>
+
+<section id="research"><div class="wrap rv in"><h2 class="sh">Research <span class="grad">Interests</span></h2><p class="sub">What drives my work</p>
+<div class="grid"><div class="card"><div class="ico">🧠</div><h3>Medical Image Analysis</h3><p class="m">CNN-based segmentation of brain structures in MRI/PET for disease staging.</p></div>
+<div class="card"><div class="ico">⌚</div><h3>Sensor-based Diagnosis</h3><p class="m">Gait, tremor and wearable signals for objective monitoring of Parkinson’s Disease, Multiple System Atrophy, and related disorders.</p></div>
+<div class="card"><div class="ico">🧬</div><h3>Image Synthesis</h3><p class="m">Generative models for cross-modality synthesis and data augmentation.</p></div>
+<div class="card"><div class="ico">🔍</div><h3>Explainable &amp; Trustworthy AI</h3><p class="m">Interpretable models clinicians can validate and trust.</p></div></div></div></section>
+
+<section id="publications" style="background:var(--surf)"><div class="wrap rv in"><h2 class="sh">Selected <span class="grad">Publications</span></h2><p class="sub">Full list on <a href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;hl=en&amp;user=W6l3P0cAAAAJ" target="_blank" rel="noopener" data-lk="scholar.google">Google Scholar ↗</a></p>
+<div class="filters"><input id="q" placeholder="Search publications…" aria-label="Search publications"><button class="f on" data-k="all">All</button><button class="f" data-k="Journal">Journal</button><button class="f" data-k="Conference">Conference</button></div><div id="pl"><div class="card pub"><div class="y">2025</div><div><h3>Automated synthetic contrast-enhanced MRI improves choroid plexus segmentation in Parkinsonian syndromes</h3><p class="m"><b>Dagnachew Tessema Ambaye</b>, Sungyang Jo, Huseyin Enes Candan, Abel Worku Tessema, Nepes Myratgeldiyev, Chong Hyun Suh, Jihong Ryu, Sun Ju Chung, Hansol Lee, Jae-Hyeok Lee, Eun-Jae Lee, HyungJoon Cho</p><div class="chips"><span class="chip">Journal</span><span class="chip">Radiology Advances</span></div></div></div><div class="card pub"><div class="y">2025</div><div><h3>Denoising of high-resolution 3D UTE-MR angiogram data using lightweight and efficient convolutional neural networks</h3><p class="m">Abel Worku Tessema, <b>Dagnachew Tessema Ambaye</b>, HyungJoon Cho</p><div class="chips"><span class="chip">Journal</span><span class="chip">Magnetic Resonance Imaging</span></div></div></div><div class="card pub"><div class="y">2024</div><div><h3>Resolution-dependent MRI-to-CT translation for orthotopic breast cancer models using deep learning</h3><p class="m"><b>Dagnachew Tessema Ambaye</b>, Abel Worku Tessema, Jiwoo Jeong, Jiwon Ryu, Tosol Yu, Jimin Lee, Hyungjoon Cho</p><div class="chips"><span class="chip">Journal</span><span class="chip">Physics in Medicine &amp; Biology</span></div></div></div></div></div></section>
+
+<section id="projects"><div class="wrap rv in"><h2 class="sh">Featured <span class="grad">Projects</span></h2><p class="sub">Funded and open-source work</p>
+<div class="grid"><div class="card"><div class="ico">🧩</div><h3>CpSeg</h3><p class="m">CNN for choroid Plexus segmentation.</p><div class="chips"><span class="chip">PyTorch</span><span class="chip">MRI</span></div></div>
+<div class="card"><div class="ico">📡</div><h3>Wearable Gait Monitor</h3><p class="m">Sensor platform for early motor-symptom detection.</p><div class="chips"><span class="chip">Soft Sensor</span><span class="chip">Signal processing</span></div></div>
+</div></div></section>
+
+<section id="awards" style="background:var(--surf)"><div class="wrap rv in"><h2 class="sh">Awards &amp; <span class="grad">Honours</span></h2><p class="sub">Recognition</p>
+<div class="grid"><div class="card"><div class="ico">🏆</div><h3>Best Tranee Scientific Awards – Poster Presentation [Gold]</h3><p class="m">Korea Society of Magnetic Resonance in Medicine, 2026</p></div><div class="card"><div class="ico">🥇</div><h3>Global Korea Scholarship</h3><p class="m">NIIED, 2021</p></div><div class="card"><div class="ico">🥇</div><h3>UNIST Scholarship</h3><p class="m">UNIST, 2024</p></div><div class="card"><div class="ico">🥇</div><h3>Certificate of Recognition – Very Great Distniction</h3><p class="m">Addis Ababa University, 2018</p></div></div></div></section>
+
+<section id="skills"><div class="wrap rv in"><h2 class="sh">Skills &amp; <span class="grad">Tools</span></h2><p class="sub">Technical expertise</p>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))"><div>
+<div class="sk"><span>Deep Learning (PyTorch/TensorFlow)</span><span>95%</span></div><div class="bar"><i data-w="95" style="width: 95%;"></i></div>
+<div class="sk"><span>Medical Image Processing</span><span>92%</span></div><div class="bar"><i data-w="92" style="width: 92%;"></i></div>
+<div class="sk"><span>Signal Processing</span><span>88%</span></div><div class="bar"><i data-w="88" style="width: 88%;"></i></div></div><div>
+<div class="sk"><span>Python / MATLAB</span><span>95%</span></div><div class="bar"><i data-w="95" style="width: 95%;"></i></div>
+<div class="sk"><span>Statistics &amp; Study Design</span><span>85%</span></div><div class="bar"><i data-w="85" style="width: 85%;"></i></div>
+<div class="sk"><span>Scientific Writing &amp; Grants</span><span>90%</span></div><div class="bar"><i data-w="90" style="width: 90%;"></i></div></div></div></div></section>
+
+<section id="teaching" style="background:var(--surf)"><div class="wrap rv in"><h2 class="sh">Teaching, Service &amp; <span class="grad">Talks</span></h2><p class="sub">Beyond the lab</p>
+<div class="grid"><div class="card"><div class="ico">🎓</div><h3>Teaching</h3><p class="m">Introduction to Control Systems, Basic Electronics, Electronic Measurement &amp; Instrumentation, Industrial Process Control.</p></div><div class="card"><div class="ico">👥</div><h3>Supervision</h3><p class="m">&nbsp;5 B.Sc. students.</p></div></div></div></section>
+
+<section id="contact"><div class="wrap rv in"><h2 class="sh">Get in <span class="grad">touch</span></h2><p class="sub">Collaborations, grants, student inquiries</p>
+<div class="contact"><div class="card"><h3>Let’s connect</h3><p class="m">📧 dagnachew@unist.ac.kr<br>📍 Biomedical Engineering, Ulsan National Institute of Science &amp; Technology, Ulsan</p>
+<div class="soc"><a class="btn" href="https://www.linkedin.com/in/dagnachew-tessema-88459419a" target="_blank" rel="noopener" data-lk="linkedin.com">in LinkedIn</a><a class="btn" href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;hl=en&amp;user=W6l3P0cAAAAJ" target="_blank" rel="noopener" data-lk="scholar.google">🎓 Scholar</a><a class="btn" href="https://orcid.org/0009-0005-5067-9570" target="_blank" rel="noopener" data-lk="orcid.org">ORCID</a><a class="btn" href="https://www.researchgate.net/profile/Dagnachew-Ambaye?ev=hdr_xprf" target="_blank" rel="noopener" data-lk="researchgate.net">ResearchGate</a></div></div>
+<div class="card"><input id="n" placeholder="Your name"><input id="e" placeholder="Your email"><textarea id="m" rows="4" placeholder="Message"></textarea><button class="btn p" id="send" data-email="dagnachew@unist.ac.kr">Send message</button></div></div></div></section>
+<footer>© <span id="yr">2026</span> Dr. Your Name · Built with care</footer>
+</div>
+<div id="toast" class="">Saved to index.html ✓</div>
+
+<script>
+var ALLOW_EDIT=false;const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+try{if(ALLOW_EDIT&&!window.FILE_MODE){const d=JSON.parse(localStorage.getItem("siteV1")||"null");if(d){$("#site").innerHTML=d.h;document.documentElement.style.cssText=d.s||""}}}catch(e){}
+$("#yr").textContent=new Date().getFullYear();
+// theme
+const root=document.documentElement;
+$("#th").onclick=()=>{const d=getComputedStyle(root).colorScheme==="dark"||root.dataset.theme==="dark";root.dataset.theme=d?"light":"dark";};
+// typing
+let roles=$(".role").dataset.roles.split("|"),ri=0,ci=0,del=false;
+(function t(){const w=roles[ri];$("#ty").textContent=w.slice(0,ci);if(!del&&ci++===w.length){del=true;return setTimeout(t,1400)}if(del&&--ci===0){del=false;ri=(ri+1)%roles.length}setTimeout(t,del?35:70)})();
+// network canvas
+const cv=$("#cv"),x=cv.getContext("2d");let W,H,P=[],m={x:-999,y:-999};
+function rs(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;P=Array.from({length:Math.min(90,W/12)},()=>({x:Math.random()*W,y:Math.random()*H,vx:Math.random()-.5,vy:Math.random()-.5}))}
+addEventListener("resize",rs);rs();cv.parentElement.onmousemove=e=>{const r=cv.getBoundingClientRect();m={x:e.clientX-r.left,y:e.clientY-r.top}};
+(function d(){x.clearRect(0,0,W,H);const c=getComputedStyle(root).getPropertyValue("--ac").trim()||"#4f46e5";x.fillStyle=x.strokeStyle=c;
+P.forEach((p,i)=>{p.x+=p.vx*.5;p.y+=p.vy*.5;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;x.globalAlpha=.6;x.beginPath();x.arc(p.x,p.y,2,0,7);x.fill();
+for(let j=i+1;j<P.length;j++){const q=P[j],dd=Math.hypot(p.x-q.x,p.y-q.y);if(dd<120){x.globalAlpha=(1-dd/120)*.35;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}
+const dm=Math.hypot(p.x-m.x,p.y-m.y);if(dm<160){x.globalAlpha=.6;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(m.x,m.y);x.stroke();p.x+=(p.x-m.x)*.004;p.y+=(p.y-m.y)*.004}});
+requestAnimationFrame(d)})();
+// reveal + counters + bars
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("in");
+e.target.querySelectorAll("[data-n]").forEach(c=>{const n=+c.dataset.n;let v=0;const s=n/60;(function u(){v=Math.min(n,v+s);c.textContent=Math.round(v).toLocaleString()+(n>=1000?"+":"");if(v<n)requestAnimationFrame(u)})()});
+e.target.querySelectorAll("[data-w]").forEach(b=>b.style.width=b.dataset.w+"%");io.unobserve(e.target)}),{threshold:.15});
+$$(".rv").forEach(e=>io.observe(e));
+// scroll progress + active link
+addEventListener("scroll",()=>{$("#prog").style.width=scrollY/(document.body.scrollHeight-innerHeight)*100+"%";
+let cur="";$$("section,header").forEach(s=>{if(scrollY>=s.offsetTop-120)cur=s.id});$$(".links a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+cur))});
+// publications
+const pubs=[["2025","Journal","Deep learning for early detection of Parkinson’s disease from multimodal MRI","Your Name, A. Coauthor, B. Coauthor","Journal of Medical Imaging"],
+["2024","Journal","Wearable sensor fusion for gait-based neurodegeneration monitoring","Your Name, C. Coauthor","IEEE Trans. Biomedical Engineering"],
+["2024","Conference","Generative image synthesis for cross-modality brain imaging","D. Coauthor, Your Name","MICCAI"],
+["2023","Journal","Explainable CNN segmentation of hippocampal subfields","Your Name et al.","NeuroImage"],
+["2022","Conference","Self-supervised pretraining for small medical datasets","Your Name, E. Coauthor","ISBI"]];
+let k="all";function rp(){const q=$("#q").value.toLowerCase();if($("#pl .pub")){$$("#pl .pub").forEach(e=>{e.style.display=(k==="all"||e.querySelector(".chip").textContent.trim()===k)&&e.textContent.toLowerCase().includes(q)?"":"none"});return}$("#pl").innerHTML=pubs.filter(p=>(k==="all"||p[1]===k)&&p.join(" ").toLowerCase().includes(q)).map(p=>`<div class="card pub"><div class="y">${p[0]}</div><div><h3>${p[2]}</h3><p class="m">${p[3]}</p><div class="chips"><span class="chip">${p[1]}</span><span class="chip">${p[4]}</span></div></div></div>`).join("")||'<p class="m">No matches.</p>'}
+$$(".f").forEach(b=>b.onclick=()=>{$$(".f").forEach(f=>f.classList.remove("on"));b.classList.add("on");k=b.dataset.k;rp()});$("#q").oninput=rp;rp();
+// contact (opens email client)
+$("#send").onclick=()=>{location.href="mailto:"+($("#send").dataset.email||"your.email@university.edu")+"?subject="+encodeURIComponent("Message from "+$("#n").value)+"&body="+encodeURIComponent($("#m").value+"\n\n"+$("#e").value)};
+</script>
+<script>
+(function(){
+if(!ALLOW_EDIT){const b=$("#ebar");b&&b.remove();return}
+const TXT="h1,h2,h3,p,.chip,.yr,.y,.sub,.stat b,.stat span,.sk span,.tag,.ico,.logo,.links a,a.btn,footer",
+LK=[["LinkedIn URL","linkedin.com"],["Google Scholar URL","scholar.google"],["ORCID URL","orcid.org"],["ResearchGate URL","researchgate.net"]],D=document,R=D.documentElement;let on=false,st;
+const toast=t=>{const e=$("#toast");e.textContent=t;e.classList.add("on");setTimeout(()=>e.classList.remove("on"),1800)};
+const clean=()=>{const c=$("#site").cloneNode(true);c.querySelectorAll(".ctl").forEach(x=>x.remove());c.querySelectorAll("[contenteditable]").forEach(x=>x.removeAttribute("contenteditable"));return c};
+const save=()=>{if(window.FILE_MODE)return;try{localStorage.setItem("siteV1",JSON.stringify({h:clean().innerHTML,s:R.style.cssText}))}catch(e){toast("Storage full – use Download")}};
+const sv=()=>{clearTimeout(st);st=setTimeout(window.FILE_MODE?toFile:save,1200)};
+const ctl=(t,f,c)=>{const b=D.createElement("button");b.type="button";b.className="ctl "+c;b.textContent=t;b.onclick=e=>{e.preventDefault();e.stopPropagation();f()};return b};
+function mount(){
+$$(".ctl").forEach(x=>x.remove());
+$$("a[href]").forEach(a=>LK.forEach(([n,k])=>{if(!a.dataset.lk&&a.getAttribute("href").includes(k))a.dataset.lk=k}));
+$$(TXT).forEach(e=>on?e.setAttribute("contenteditable","true"):e.removeAttribute("contenteditable"));
+D.body.classList.toggle("editing",on);if(!on)return;
+$$(".grid>.card,#pl>.pub,.tl>.it,.stats>.card").forEach(i=>i.append(ctl("✕",()=>{i.remove();sv()},"x")));
+$$(".sk").forEach(s=>s.append(ctl("✕",()=>{const b=s.nextElementSibling;s.remove();b&&b.remove();sv()},"x")));
+$$(".grid,#pl,.tl,.stats").forEach(c=>{const it=[...c.children].filter(x=>x.matches(".card,.it,.pub"));if(it.length)c.append(ctl("＋ Add",()=>{const n=it[it.length-1].cloneNode(true);n.querySelectorAll(".ctl").forEach(x=>x.remove());n.style.display="";c.insertBefore(n,c.querySelector(":scope>.ctl"));mount();sv()},"add"))});
+$$(".grid>div").forEach(c=>{if(!c.querySelector(".sk"))return;c.append(ctl("＋ Add skill",()=>{const a=[...c.querySelectorAll(".sk")].pop(),n=a.cloneNode(true),b=a.nextElementSibling.cloneNode(true),z=c.querySelector(":scope>.ctl");n.querySelectorAll(".ctl").forEach(x=>x.remove());c.insertBefore(n,z);c.insertBefore(b,z);mount();sv()},"add"))});
+$$("section").forEach(s=>s.append(ctl("🗑 Remove section",()=>{if(confirm("Remove this section?")){const a=$('.links a[href="#'+s.id+'"]');a&&a.remove();s.remove();sv()}},"sec")))}
+function pick(a){if(!confirm("OK = upload photo\nCancel = edit initials")){const t=prompt("Initials",a.textContent.trim());if(t!==null){a.textContent=t;sv()}return}
+const f=D.createElement("input");f.type="file";f.accept="image/*";f.onchange=()=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=D.createElement("canvas");c.width=c.height=500;const s=Math.min(im.width,im.height);c.getContext("2d").drawImage(im,(im.width-s)/2,(im.height-s)/2,s,s,0,0,500,500);a.style.background="url("+c.toDataURL("image/jpeg",.85)+") center/cover";a.textContent="";sv()};im.src=r.result};r.readAsDataURL(f.files[0])};f.click()}
+function editLinks(){LK.forEach(([n,k])=>{const as=$$("a[data-lk='"+k+"']");if(!as.length)return;const v=prompt(n,as[0].getAttribute("href"));if(v)as.forEach(a=>a.setAttribute("href",v))});
+const s=$("#send"),m=prompt("Contact email (receives form messages)",s.dataset.email||"your.email@university.edu");if(m)s.dataset.email=m;sv();toast("Links updated")}
+function roleEdit(){const r=$(".role"),v=prompt("Rotating roles, separated by |",r.dataset.roles);if(v){r.dataset.roles=v;roles=v.split("|");ri=0;ci=0;del=false;sv()}}
+function addSec(){const t=prompt("New section title");if(!t)return;const id=t.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"sec"+Date.now(),h=t.replace(/</g,"&lt;"),s=D.createElement("section");s.id=id;
+s.innerHTML='<div class="wrap rv in"><h2 class="sh">'+h+'</h2><p class="sub">Short description</p><div class="grid"><div class="card"><h3>Item title</h3><p class="m">Item description</p></div></div></div>';
+$("footer").before(s);const a=D.createElement("a");a.href="#"+id;a.textContent=t;$(".links").append(a);mount();s.scrollIntoView();sv()}
+function build(pub){const d=R.cloneNode(true);d.querySelectorAll("script").forEach(s=>{if(s.textContent.trim()==="window.FILE_MODE=true")s.remove()});
+d.querySelectorAll(".ctl").forEach(x=>x.remove());d.querySelectorAll("[contenteditable]").forEach(x=>x.removeAttribute("contenteditable"));d.querySelector("body").classList.remove("editing");d.querySelector("#prog").style.width="0";
+d.querySelectorAll("#pl .pub").forEach(e=>e.style.display="");
+if(pub){d.querySelector("#ebar").remove();d.querySelectorAll("script").forEach(s=>{s.textContent=s.textContent.replace("var ALLOW_EDIT=false;","var ALLOW_EDIT=false;")})}
+return "<!DOCTYPE html>\n"+d.outerHTML}
+function dl(){const pub=confirm("OK = PUBLIC version (edit button removed)\nCancel = EDITABLE version");const a=D.createElement("a");a.href=URL.createObjectURL(new Blob([build(pub)],{type:"text/html"}));a.download="index.html";a.click()}
+async function toFile(){try{const r=await fetch("/save",{method:"POST",headers:{"Content-Type":"text/html"},body:build(false)});if(!r.ok)throw 0;toast("Saved to index.html ✓")}catch(e){toast("Save failed – is npm start running?")}}
+D.addEventListener("click",e=>{if(!on)return;const a=e.target.closest(".avatar");if(a){pick(a);return}if(e.target.closest("a"))e.preventDefault()},true);
+D.addEventListener("paste",e=>{if(on&&e.target.isContentEditable){e.preventDefault();D.execCommand("insertText",false,e.clipboardData.getData("text/plain"))}});
+D.addEventListener("input",e=>{if(!on)return;const t=e.target;if(t.matches(".stat b"))t.dataset.n=parseInt(t.textContent.replace(/\D/g,""))||0;if(t.matches(".sk span:last-child")){const i=t.parentElement.nextElementSibling.firstElementChild,v=Math.min(100,parseInt(t.textContent)||0);i.dataset.w=v;i.style.width=v+"%"}sv()});
+D.addEventListener("keydown",e=>{if(on&&(e.ctrlKey||e.metaKey)&&e.key==="s"){e.preventDefault();window.FILE_MODE?toFile():(save(),toast("Saved ✓"))}});
+$("#eb").onclick=()=>{on=!on;if(on){const g=n=>getComputedStyle(R).getPropertyValue(n).trim();$("#c1").value=g("--ac");$("#c2").value=g("--ac2")}mount();$("#eb").textContent=on?"✓ Done":"✎ Edit";if(!on){window.FILE_MODE?toFile():(save(),toast("Saved ✓"))}};
+["c1","c2"].forEach((id,i)=>$("#"+id).oninput=e=>{R.style.setProperty(i?"--ac2":"--ac",e.target.value);sv()});
+$("#etools").onclick=e=>{const a=e.target.dataset.a;({links:editLinks,roles:roleEdit,sec:addSec,save:()=>window.FILE_MODE?toFile():(save(),toast("Saved in this browser ✓")),dl,reset:()=>{if(window.FILE_MODE){toast("Previous version is in index.backup.html");return}if(confirm("Discard ALL saved edits and restore the original?")){localStorage.removeItem("siteV1");location.reload()}}})[a]?.()};
+})();
+</script>
+
+
+</body></html>
